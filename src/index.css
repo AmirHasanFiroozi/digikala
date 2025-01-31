@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "IranYekan";
+  src:
+    url("./assets/font/IRANYekanRegular.ttf") format("truetype"),
+    url("./assets/font/IRANYekan.woff") format("woff"),
+    url("./assets/font/IRANYekan.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --text-color: #6c666d;
+  --color-gray1: #f0f0f0;
+  --color-gray2: #e0e0e2;
+  --color-gray3: #bcbcbc;
+  --color-gray4:#a1a3a8;
+  --color-mainred: #ed1944;
+  --color-red: #ef4056;
+  --color-blue: #008eb2;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b6b6b6;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #747474;
+}
+
+body {
+  font-family: "IranYekan", "sans-serif";
+  font-size: 12px;
+}
+
+button,
+li {
+  cursor: pointer;
+}
+
+.lock-page{
+  overflow: hidden !important;
+}
+
+.mainContainer{
+  max-width: 81.25rem;
+  margin: 0 auto;
+  width: 98%;
+  
+  /* test styles */
+  height: 500px;
+  background-color: aqua;
+}
+
+.wholePageItemsContainer{
+  max-width: 96rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.loader, .loader:before, .loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.loader {
+  color: #ed1944;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+  0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+  40% { box-shadow: 0 2.5em 0 0 }
+}
