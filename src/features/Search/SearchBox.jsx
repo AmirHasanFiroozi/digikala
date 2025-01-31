@@ -8,7 +8,7 @@ import SearchResult from "./SearchResult";
 function SearchBox({ device }) {
   const dispatch = useDispatch();
   const { searchBox } = useSelector(
-    (store) => store.search,
+    (store) => store.search  ,
   );
   const inputRef = useRef(null);
 
