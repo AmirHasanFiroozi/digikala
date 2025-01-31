@@ -43,7 +43,7 @@ export const {openSearchBox , closeSearchBox} = searchSlice.actions;
 
 export function fetchGetSearchResult(query) {
   if (query === "") return;
-  return async function (dispatch, setState) {
+  return async function (dispatch) {
     dispatch(searchSlice.actions.loading());
     const res = await fetch(
       `https://api.digikala.com/v1/autocomplete/?q=${query}`,
@@ -54,9 +54,7 @@ export function fetchGetSearchResult(query) {
         },
       },
     );
-    console.log(res);
     const data = await res.json();
-    console.log(data);
     dispatch(searchSlice.actions.getSearchResult(query, data));
   };
 }

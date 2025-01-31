@@ -25,7 +25,6 @@ const featureSlice = createSlice({
             state.situation = "arrive";
             state.isLoading = false;
             state.data = action.payload;
-            console.log(action.payload)
         }
     }
 })

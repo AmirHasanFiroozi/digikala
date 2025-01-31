@@ -22,8 +22,6 @@ function Slider({slides}) {
     [width],
   );
 
-  console.log(right);
-
   const nextSlide = useCallback(
     function nextSlide() {
       if (right - slideWidth === -slideWidth * slidesLength) setRight(0);
@@ -69,7 +67,7 @@ function Slider({slides}) {
         <div
           className="relative flex h-full transition-[0.5s] max-sm:gap-4"
           style={{
-            width: `${slideWidth * slidesLength}px`,
+            width: `${slideWidth * slidesLength + 6}px`,
             right: `${right}px`,
           }}
         >
@@ -79,7 +77,7 @@ function Slider({slides}) {
               target="_blank"
               className={`h-full`}
               style={{ width: `${slideWidth}px` }}
-              href={`${slide.url.base}${slide.url.uri}`}
+              href={`https://www.digikala.com/${slide.url.uri}`}
             >
               <img
                 className="h-full w-full object-cover max-sm:rounded-2xl"
