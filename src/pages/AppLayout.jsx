@@ -6,6 +6,7 @@ import InstallDigikala from "../features/Advertisement/InstallDigikala";
 import MobileHeader from "../Ui/Header/MobileHeader";
 import { useSelector } from "react-redux";
 import HomePageSlider from "../features/slider/HomePageSlider"
+import AmazingOfferBox from "../features/AmazingOffers/AmazingOfferBox";
 
 function AppLayout() {
   const megaMenu = useSelector(store => store.category.megaMenu)
@@ -22,6 +23,7 @@ function AppLayout() {
       <MobileHeader />
       <main className="max-sm:py-4">
         <HomePageSlider />
+        <AmazingOfferBox />
       </main>
     </>
   );

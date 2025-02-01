@@ -6,17 +6,16 @@ import CustomModal from "./CustomModal";
 function HandleModals() {
     const [width] = useSize();
     const error = useSelector(store => store.homePageWidgets.error);
-    console.log(error)
 
     return (
-        <diV>
+        <div>
           {
             width < 1280 && <SearchBox device="mobile" />
           }
           {
             error && <CustomModal text="برای دریافت اطلاعات صحیح از سرور دیجی کالا لطفا افزونه‌ی cors Unblock را نصب کنید " />
           }
-        </diV>
+        </div>
     )
 }
 

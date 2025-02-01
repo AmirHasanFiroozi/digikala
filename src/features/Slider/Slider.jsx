@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import ArrowRightButton from "../../Ui/Buttons/ArrowRightButton";
 import ArrowLeftButton from "../../Ui/Buttons/ArrowLeftButton";
 import useSize from "../../Hooks/useSize";
+import { Image } from "../../Ui/SVGs/Svg";
 
-
-function Slider({slides}) {
+function Slider({ slides }) {
   const [buttonShows, setButtonShows] = useState(false);
   const [slideWidth, setSlideWidth] = useState(0);
   const [right, setRight] = useState(0);
@@ -75,15 +75,19 @@ function Slider({slides}) {
             <a
               key={slide.id}
               target="_blank"
-              className={`h-full`}
+              className={`flex h-full items-center justify-center`}
               style={{ width: `${slideWidth}px` }}
               href={`https://www.digikala.com/${slide.url.uri}`}
             >
-              <img
-                className="h-full w-full object-cover max-sm:rounded-2xl"
-                src={slide.image}
-                alt={slide.title}
-              />
+              {slide.image ? (
+                <img
+                  className="h-full w-full object-cover max-sm:rounded-2xl"
+                  src={slide.image}
+                  alt={slide.title}
+                />
+              ) : (
+                <Image width={100} height={100} />
+              )}
             </a>
           ))}
         </div>
