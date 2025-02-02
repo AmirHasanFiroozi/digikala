@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import PopularProducts from "../../Ui/Header/PopularProducts";
 import { closeSearchBox, fetchGetSearchResult } from "./searchSlice";
 import { X } from "../../Ui/SVGs/Svg";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SearchResult from "./SearchResult";
 
 function SearchBox({ device }) {
@@ -19,14 +19,16 @@ function SearchBox({ device }) {
   }, [searchBox]);
 
   function search(ev) {
-    dispatch(fetchGetSearchResult(ev.target.value));
+    if(ev.target.value.length > 1 ){
+      dispatch(fetchGetSearchResult(ev.target.value));
+    }
   }
   function closeSearchBoxFunc() {
     dispatch(closeSearchBox());
   }
   return (
     <div
-      className={`absolute z-50 overflow-y-auto bg-white p-4 shadow-xl transition-[0.3s] ${searchBox && device === "mobile" ? `left-0 h-full w-full visible opacity-100 top-0 ${searchBox ? "" : " w-0 h-0 invisible top-[100%] opacity-0"}` : `top-0 right-0 left-0 max-h-[80vh] rounded-2xl ${searchBox ? "visible opacity-100" : "invisible opacity-0"}`}`}
+      className={`bg-white z-50 p-5 transition-[10s] ${device === "mobile" ? `fixed top-0 left-0 right-0 bottom-0 ${searchBox ? "" : "top-[100%]"}` : `absolute top-0 w-full rounded-2xl shadow ${searchBox ? "opacity-100 visible" : "opacity-0 invisible"}`}`}
     >
         <>
           <div className="flex items-center border-b-1 border-b-blue-400 pb-2">
@@ -34,7 +36,7 @@ function SearchBox({ device }) {
               ref={inputRef}
               type="text"
               placeholder="جستجو"
-              onChange={search}
+              onKeyDown={search}
               className="w-full border-0 outline-0"
             />
             <button onClick={closeSearchBoxFunc}>

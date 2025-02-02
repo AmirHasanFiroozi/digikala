@@ -17,7 +17,7 @@ function AmazingTitle({ amazingOffers }) {
           src={amazingsPic}
           alt={amazingOffers.title}
         />
-        <Timer finishTime="Sat Feb 02 2025 03:37:47 GMT+0330 (Iran Standard Time)" />
+        <Timer finishTime="Sun Feb 03 2025 00:56:07 GMT+0330 (Iran Standard Time)" />
         <img src={amazingPic} alt={amazingOffers.title} />
         <span
           className="flex items-center gap-1 text-white"

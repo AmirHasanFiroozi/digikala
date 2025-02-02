@@ -30,8 +30,6 @@ function AmazingOfferBox() {
     setLeft(left - 168)
   }
 
-  console.log(left);
-
   return (
     <div ref={otherBox} className="mainContainer relative my-5 flex h-[250px] overflow-hidden rounded-xl bg-(--color-red) p-4">
       <div ref={innerBox} className="relative flex transition-[0.2s]" style={{transform : `translate3d(${left}px , 0 , 0)`}}>

@@ -3,9 +3,11 @@ import { Search as SearchIcon } from "../../Ui/SVGs/Svg";
 import image from "../../assets/icons/digikalaText.svg";
 import SearchBox from "./SearchBox";
 import { openSearchBox } from "./searchSlice";
+import { useState } from "react";
 
 function Search() {
   const dispatch = useDispatch();
+  const [top , setTop] = useState(0);
 
   return (
     <div className="relative w-[600px] max-w-full max-xl:w-full">
@@ -13,6 +15,7 @@ function Search() {
           onClick={(ev) => {
             ev.preventDefault();
             dispatch(openSearchBox());
+            setTop(window.scrollY);
           }}
           to="search"
           className="flex h-10 w-full cursor-pointer items-center gap-x-1 rounded-lg bg-(--color-gray1) p-4 text-(--text-color)"
@@ -30,7 +33,7 @@ function Search() {
           />
         </button>
         <div className="max-xl:hidden">
-          <SearchBox />
+          <SearchBox top={top}/>
         </div>
     </div>
   );

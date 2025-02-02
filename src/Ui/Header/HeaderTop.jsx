@@ -9,7 +9,7 @@ function HeaderTop() {
 
   return (
     <div
-      className="flex items-center justify-between py-2 2xl:mx-auto 2xl:w-[90rem]"
+      className="flex bg-white z-30 items-center justify-between py-2 2xl:mx-auto 2xl:w-[90rem]"
     >
       <div className="flex items-center max-xl:w-full">
         <Icon />

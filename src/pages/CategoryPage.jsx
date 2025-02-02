@@ -22,10 +22,6 @@ function CategoryPage() {
     [width, changeSize, navigate],
   );
 
-  useEffect(function(){
-    document.body.classList.add('lock-page');
-  } , [])
-
   return (
     <div>
       <div className="p-2">

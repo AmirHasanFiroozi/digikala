@@ -2,7 +2,6 @@ import { HanmberMenu } from "../../Ui/SVGs/Svg";
 import MenuBox from "./MenuBox";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMegaMenu, openMegaMenu } from "./categorySlice";
-import { memo } from "react";
 
 /* eslint-disable react/prop-types */
 function BoxCategory() {
@@ -11,9 +10,11 @@ function BoxCategory() {
 
   function MouseEnterEventHandler() {
     dispatch(openMegaMenu());
+    document.body.classList.add('lock-page')
   }
   function MouseLeaveEventHandler(){
     dispatch(closeMegaMenu())
+    document.body.classList.remove('lock-page')
   }
   return (
     <>

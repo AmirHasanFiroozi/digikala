@@ -7,6 +7,7 @@ const CategoryPage = lazy(() =>import("./pages/CategoryPage"));
 const CartPage = lazy(() =>import("./pages/CartPage"));
 const UserPage = lazy(() =>import("./pages/UserPage"));
 const HandleModals = lazy(() =>import("./features/modals/HandleModals"));
+const ProductPage = lazy(() =>import("./pages/ProductPage"));
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/user",
     element: <UserPage />,
+  },
+  {
+    path: "/products",
+    element: <ProductPage />,
   },
 ]);
 

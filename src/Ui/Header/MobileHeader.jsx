@@ -4,7 +4,7 @@ import { memo } from "react";
 
 function MobileHeader() {
   return (
-    <ul className="hidden fixed right-0 bottom-0 left-0 w-full items-center bg-(--color-gray1) text-(--color-gray4) max-xl:flex">
+    <ul className="hidden fixed right-0 bottom-0 left-0 w-full z-30 items-center bg-(--color-gray1) text-(--color-gray4) max-xl:flex">
       <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-(--color-red)">
         <NavLink
           className="flex w-full flex-col items-center"

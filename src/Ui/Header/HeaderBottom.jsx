@@ -4,18 +4,24 @@ import ChooseCityButton from "../Buttons/ChooseCityButton";
 import Line from "../Other/Line";
 import NavLinks from "./NavLinks";
 import QuestionsAndSellInDigikala from "./QuestionsAndSellInDigikala";
+import useScrollSituation from "../../Hooks/useScrollSituation";
 
 function HeaderBottom() {
+  const scrollSituation = useScrollSituation();
+
   return (
-    <div className="2xl:w-[90rem] 2xl:mx-auto flex items-center justify-between z-20 relative">
-      <div className="flex items-center relative max-xl:hidden w-full">
+    <div
+      className="customTransition relative z-20 flex items-center justify-between bg-white 2xl:mx-auto 2xl:w-[90rem]"
+      // style={{ top: `${scrollSituation === "down" && window.scrollY > 200 ? "-50" : "0"}px` }}
+    >
+      <div className="relative flex w-full items-center max-xl:hidden">
         <ProductCategory />
         <Line />
         <NavLinks />
         <Line />
         <QuestionsAndSellInDigikala />
-        <div className="bg-(--color-mainred) h-0.5 rounded-md absolute bottom-0 transition-[0.3s] w-0"></div>
-      </div> 
+        <div className="absolute bottom-0 h-0.5 w-0 rounded-md bg-(--color-mainred) transition-[0.3s]"></div>
+      </div>
       <div className="py-2 max-xl:w-full">
         <ChooseCityButton />
       </div>

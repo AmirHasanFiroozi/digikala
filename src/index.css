@@ -121,3 +121,8 @@ li {
     box-shadow: 0 2.5em 0 0;
   }
 }
+
+
+.customTransition{
+  transition: all 0.1s;
+}

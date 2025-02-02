@@ -3,9 +3,9 @@ import toPersianNumber from "../../services/toPersianNumber";
 
 /* eslint-disable react/prop-types */
 function AmazingOffersElement({ product }) {
-    const price = product.default_variant.price.rrp_price;
-    const discountPrice = product.default_variant.price.selling_price;
-    const discount = (((price - discountPrice)*100)/price).toFixed(0)
+    const price = product.default_variant.price?.rrp_price / 10;
+    const discountPrice = product.default_variant.price?.selling_price / 10;
+    const discount = (((price - discountPrice)*100)/price).toFixed(0);
 
   return (
     <a
@@ -28,7 +28,7 @@ function AmazingOffersElement({ product }) {
           <span></span>
         )}
         <div className="flex flex-col">
-        <span>{formatPrice(discountPrice)}</span>
+        <span className="flex items-center gap-1">{formatPrice(discountPrice)}<span className="font-bold text-[8px]">تومان</span></span>
         {discountPrice !== price && <span className="text-(--color-gray3) line-through">{formatPrice(price)}</span>}
         </div>
       </div>
