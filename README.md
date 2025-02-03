@@ -1,4 +1,4 @@
 # **not complete yet**
-you should use 'cors unBlock' extension to correctly get data from API 
-home page : "/"
-products page "/products"
+you should use 'cors unBlock' extension to correctly get data from API <br>
+home page : "/"<br>
+products page "/products"<br>
