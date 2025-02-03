@@ -8,6 +8,7 @@ const initialState = {
   shipBySeller: "",
   sellingStock: "",
   page: 0,
+  filter : false ,
 };
 
 const productSlice = createSlice({
@@ -39,6 +40,7 @@ const productSlice = createSlice({
         if(!!action.payload.shipBySeller !== state.shipBySeller){
             state.data = []
         }
+        state.filter = state.jetDelivery || state.sellingStock || state.shipBySeller ;
         state.data =
           state.page === action.payload.page
             ? action.payload.data.products

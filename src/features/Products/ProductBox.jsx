@@ -12,8 +12,15 @@ function ProductBox() {
   const gridElement = useRef(null);
   const [gridNumber, setGridNumber] = useState(0);
   const [width] = useSize();
-  const { isLoading, error, data, jetDelivery, shipBySeller, sellingStock } =
-    useSelector((store) => store.productReducer);
+  const {
+    filter,
+    isLoading,
+    error,
+    data,
+    jetDelivery,
+    shipBySeller,
+    sellingStock,
+  } = useSelector((store) => store.productReducer);
 
   useEffect(
     function () {
@@ -61,11 +68,41 @@ function ProductBox() {
         ref={gridElement}
         className="mb-10 grid w-full grid-cols-4 border-t-[1px] border-(--color-gray2) max-xl:grid-cols-3 max-lg:w-full max-lg:grid-cols-2 max-sm:grid-cols-1"
       >
-        {isLoading === true && (
+        {filter ? (
           <>
-            {Array.from({ length: 8 }, (_, index) => index).map((_, i) => (
-              <ProductLoading number={i + 1} key={i} gridNumber={gridNumber} />
-            ))}
+            {isLoading === true && (
+              <>
+                {Array.from({ length: 8 }, (_, index) => index).map((_, i) => (
+                  <ProductLoading
+                    number={i + 1}
+                    key={i}
+                    gridNumber={gridNumber}
+                  />
+                ))}
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            {isLoading === true && (
+              <>
+                {data?.map((product, i) => (
+                  <Product
+                    product={product}
+                    key={product.id}
+                    number={i + 1}
+                    gridNumber={gridNumber}
+                  />
+                ))}
+                {Array.from({ length: 8 }, (_, index) => index).map((_, i) => (
+                  <ProductLoading
+                    number={i + 1}
+                    key={i}
+                    gridNumber={gridNumber}
+                  />
+                ))}
+              </>
+            )}
           </>
         )}
         {error && <span>{error}</span>}
