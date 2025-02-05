@@ -23,6 +23,9 @@ const productSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    setFilter(state , action){
+     state.filter = action.payload;
+    },
     setData: {
       prepare(data, page, jetDelivery, shipBySeller, sellingStock) {
         return {
@@ -40,7 +43,6 @@ const productSlice = createSlice({
         if(!!action.payload.shipBySeller !== state.shipBySeller){
             state.data = []
         }
-        state.filter = state.jetDelivery || state.sellingStock || state.shipBySeller ;
         state.data =
           state.page === action.payload.page
             ? action.payload.data.products
@@ -63,6 +65,7 @@ export function requestProducts(
   sellingStock = "",
 ) {
   return async function (dispatch) {
+    dispatch(productSlice.actions.setFilter(!!(jetDelivery || shipBySeller || sellingStock)))
     try {
       dispatch(productSlice.actions.setLoading());
       const req = await fetch(

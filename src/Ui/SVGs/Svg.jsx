@@ -544,7 +544,10 @@ function Furniture({ width, height }) {
           fill="currentColor"
           d="M123.02,258.39h-27.1v-115.59h23.06c0,4.83-.02,9.6,0,14.36.03,6.5,1.68,8.23,8.28,8.3,8.11.08,16.23.02,24.6.02v14.18c-1.79,0-3.7,0-5.61,0-11.49,0-22.98-.04-34.48.01-6.5.03-8.5,1.94-8.47,8.22.06,11.32-.21,22.66.47,33.95.82,13.75,7.09,25.12,17.2,34.4.55.51,1.03,1.09,2.03,2.15Z"
         />
-        <path fill="currentColor" d="M130.53,153.39v-10.39h52.44v10.39h-52.44Z" />
+        <path
+          fill="currentColor"
+          d="M130.53,153.39v-10.39h52.44v10.39h-52.44Z"
+        />
         <path
           fill="currentColor"
           d="M226.91,115.12c.5-3.76.56-7.46,1.64-10.83.49-1.53,3-2.41,5.17-4,2.3,13.58.2,16.93-6.81,14.83Z"
@@ -1063,21 +1066,63 @@ function LeftFlash({ width, height }) {
 }
 
 function Star({ width, height }) {
-  return (<svg
-  width={`${width ? width : "19"}px`}
-  height={`${height ? height : "18"}px`}
-    xmlns="http://www.w3.org/2000/svg"
-    fill="#ffb703"
-    viewBox="0 0 24 24"
-    strokeWidth="1.5"
-    stroke="#ffb703"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
-    />
-  </svg>);
+  return (
+    <svg
+      width={`${width ? width : "19"}px`}
+      height={`${height ? height : "18"}px`}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="#ffb703"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="#ffb703"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+      />
+    </svg>
+  );
+}
+
+function Shop({ width, height }) {
+  return (
+    <svg
+      width={`${width ? width : "19"}px`}
+      height={`${height ? height : "18"}px`}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"
+      />
+    </svg>
+  );
+}
+
+function CircleError({ width, height }) {
+  return (
+    <svg
+      width={`${width ? width : "19"}px`}
+      height={`${height ? height : "18"}px`}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+      />
+    </svg>
+  );
 }
 
 export {
@@ -1118,5 +1163,7 @@ export {
   Native,
   Image,
   LeftFlash,
-  Star
+  Star,
+  Shop,
+  CircleError,
 };

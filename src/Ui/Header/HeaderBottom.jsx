@@ -4,10 +4,8 @@ import ChooseCityButton from "../Buttons/ChooseCityButton";
 import Line from "../Other/Line";
 import NavLinks from "./NavLinks";
 import QuestionsAndSellInDigikala from "./QuestionsAndSellInDigikala";
-import useScrollSituation from "../../Hooks/useScrollSituation";
 
 function HeaderBottom() {
-  const scrollSituation = useScrollSituation();
 
   return (
     <div

@@ -3,6 +3,7 @@ import { lazy } from "react";
 
 import HomePage from "./pages/HomePage";
 import HandleFullLoader from "./Ui/Loader/HandleFullLoader";
+import TheProductPage from "./pages/TheProductPage";
 const CategoryPage = lazy(() =>import("./pages/CategoryPage"));
 const CartPage = lazy(() =>import("./pages/CartPage"));
 const UserPage = lazy(() =>import("./pages/UserPage"));
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <ProductPage />,
+  },
+  {
+    path: "/products/:id",
+    element: <TheProductPage />,
   },
 ]);
 

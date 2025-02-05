@@ -1,10 +1,8 @@
 import HeaderTop from "./HeaderTop";
 import HeaderButton from "./HeaderBottom";
 import { memo } from "react";
-import useScrollSituation from "../../Hooks/useScrollSituation";
 
 function Header() {
-  const scrollSituation = useScrollSituation();
 
   return (
     <header
