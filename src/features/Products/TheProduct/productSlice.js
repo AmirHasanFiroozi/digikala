@@ -4,6 +4,7 @@ const initialState = {
     error : "",
     isLoading : false,
     data : {},
+    color : "",
 }
 
 const theProductSlice = createSlice({
@@ -22,12 +23,18 @@ const theProductSlice = createSlice({
             state.isLoading = false ;
             state.error = "";
             state.data = action.payload ;
+            state.color = state.data.colors[0];
         },
         clearData(state){
             state.data = {};
+        },
+        setColor(state,action){
+            state.color = action.payload;
         }
     }
 })
+
+export const {setColor} = theProductSlice.actions ;
 
 export default theProductSlice.reducer ;
 

@@ -6,7 +6,7 @@ function CategoryItems({ Items, device }) {
   return (
     <>
       <h4
-        className={`flex cursor-pointer flex-wrap items-center gap-1 pb-5 text-[13px] text-(--color-blue)`}
+        className={`flex cursor-pointer flex-wrap items-center gap-1 pb-5 text-[13px] text-[var(--color-blue)]`}
       >
         {Items.title}
         <ArrowLeft width={10} height={10} />

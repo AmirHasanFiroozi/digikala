@@ -18,7 +18,7 @@ function Search() {
             setTop(window.scrollY);
           }}
           to="search"
-          className="flex h-10 w-full cursor-pointer items-center gap-x-1 rounded-lg bg-(--color-gray1) p-4 text-(--text-color)"
+          className="flex h-10 w-full cursor-pointer items-center gap-x-1 rounded-lg bg-[var(--color-gray1)] p-4 text-[var(--text-color)]"
         >
           <SearchIcon />
           <span className="cursor-text" type="text">

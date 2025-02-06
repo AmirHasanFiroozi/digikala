@@ -4,8 +4,8 @@ import { memo } from "react";
 
 function MobileHeader() {
   return (
-    <ul className="hidden fixed right-0 bottom-0 left-0 w-full z-30 items-center bg-(--color-gray1) text-(--color-gray4) max-xl:flex">
-      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-(--color-red)">
+    <ul className="hidden fixed right-0 bottom-0 left-0 w-full z-30 items-center bg-[var(--color-gray1)] text-[var(--color-gray4)] max-xl:flex">
+      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-[var(--color-red)]">
         <NavLink
           className="flex w-full flex-col items-center"
           to="/"
@@ -17,7 +17,7 @@ function MobileHeader() {
           خانه
         </NavLink>
       </li>
-      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-(--color-red)">
+      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-[var(--color-red)]">
         <NavLink
           className="flex w-full flex-col items-center"
           to="/category"
@@ -29,7 +29,7 @@ function MobileHeader() {
           دسته بندی
         </NavLink>
       </li>
-      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-(--color-red)">
+      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-[var(--color-red)]">
         <NavLink
           className="flex w-full flex-col items-center"
           to="/cart"
@@ -41,7 +41,7 @@ function MobileHeader() {
           سبد خرید
         </NavLink>
       </li>
-      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-(--color-red)">
+      <li className="flex w-[25%] items-center py-2 transition hover:bg-white hover:text-[var(--color-red)]">
         <NavLink
           className="flex w-full flex-col items-center"
           to="/user"

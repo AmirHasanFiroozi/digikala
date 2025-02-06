@@ -10,7 +10,7 @@
   font-style: normal;
 }
 
-@theme {
+:root {
   --text-color: #6c666d;
   --color-gray1: #f0f0f0;
   --color-gray2: #e0e0e2;
@@ -18,8 +18,9 @@
   --color-gray4: #a1a3a8;
   --color-mainred: #ed1944;
   --color-red: #ef4056;
-  --color-red1:#d32f2f;
+  --color-red1: #d32f2f;
   --color-blue: #008eb2;
+  --color-blue1: #19bfd3;
 }
 
 /* width */
@@ -124,15 +125,22 @@ li {
   }
 }
 
-
-.customTransition{
+.customTransition {
   transition: all 0.1s;
 }
 
 .hideScrollbar {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
-.hideScrollbar::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+.hideScrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.text-stroke {
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
 }

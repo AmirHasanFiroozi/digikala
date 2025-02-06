@@ -14,7 +14,7 @@ function AmazingOffersElement({ product }) {
     <a
       href={`https://www.digikala.com/${product.url.uri}`}
       target="_blank"
-      className="h-full w-40 bg-white p-2 text-(--text-color)"
+      className="h-full w-40 bg-white p-2 text-[var(--text-color)]"
     >
       <div className="h-[55%] w-full">
         <img
@@ -26,7 +26,7 @@ function AmazingOffersElement({ product }) {
       <h4 className="line-clamp-2">{product.title_fa}</h4>
       <div className="flex items-center justify-between py-2">
         {discountPrice !== price ? (
-          <span className="rounded-full bg-(--color-red1) px-2 py-0.5 text-white">
+          <span className="rounded-full bg-[var(--color-red1)] px-2 py-0.5 text-white">
             {toPersianNumber(discount)}%
           </span>
         ) : (
@@ -34,7 +34,7 @@ function AmazingOffersElement({ product }) {
         )}
         {price === undefined ? (
           <>
-            <span className="text-sm font-bold text-(--text-color)">
+            <span className="text-sm font-bold text-[var(--text-color)]">
               ناموجود
             </span>
           </>
@@ -46,7 +46,7 @@ function AmazingOffersElement({ product }) {
                 <span className="text-[8px] font-bold">تومان</span>
               </span>
               {discountPrice !== price && (
-                <span className="text-(--color-gray3) line-through">
+                <span className="text-[var(--color-gray3)] line-through">
                   {formatPrice(price / 10)}
                 </span>
               )}

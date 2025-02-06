@@ -66,7 +66,7 @@ function ProductBox() {
     <div className="flex w-[80%] flex-col max-lg:w-full">
       <div
         ref={gridElement}
-        className="mb-10 grid w-full grid-cols-4 border-t-[1px] border-(--color-gray2) max-xl:grid-cols-3 max-lg:w-full max-lg:grid-cols-2 max-sm:grid-cols-1"
+        className="mb-10 grid w-full grid-cols-4 border-t-[1px] border-[var(--color-gray2)] max-xl:grid-cols-3 max-lg:w-full max-lg:grid-cols-2 max-sm:grid-cols-1"
       >
         {filter ? (
           <>

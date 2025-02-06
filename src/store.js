@@ -4,6 +4,7 @@ import categoryReducer from "./features/ProductCategoryBox/categorySlice"
 import homePageWidgetsReducer from "./features/HomePageFeaturesRequest";
 import productReducer from "./features/ProductRequest";
 import theProductReducer from "./features/Products/TheProduct/productSlice";
+import commentReducer from "./features/Products/TheProduct/commentSlice";
  
 
 const store = configureStore({
@@ -13,6 +14,7 @@ const store = configureStore({
        homePageWidgets : homePageWidgetsReducer,
        productReducer ,
        theProductReducer ,
+       commentReducer ,
     }
 })
 

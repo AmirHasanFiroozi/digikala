@@ -3,15 +3,15 @@
 function QuestionsAndSellInDigikala() {
 
   return (
-    <nav className="text-(--text-color)">
+    <nav className="text-[var(--text-color)]">
       <ul className="flex items-center gap-4">
         <li
-          className="navigation py-3 hover:text-(--color-red)"
+          className="navigation py-3 hover:text-[var(--color-red)]"
         >
           سوالی دارید؟
         </li>
         <li
-          className="navigation py-3 hover:text-(--color-red)"
+          className="navigation py-3 hover:text-[var(--color-red)]"
         >
           در دیجیکالا بفروشید
         </li>

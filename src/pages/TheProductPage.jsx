@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductImageBox from "../features/Products/TheProduct/ProductImageBox";
 import ProdcutInformationBox from "../features/Products/TheProduct/ProdcutInformationBox";
 import { Shop } from "../Ui/SVGs/Svg";
+import ProductCommentBox from "../features/Products/TheProduct/ProductCommentBox";
+import TheProductPageModal from "../features/modals/TheProductPageModal";
 
 function TheProductPage() {
   const { id } = useParams();
@@ -34,8 +36,8 @@ function TheProductPage() {
         <>
           <TopAdvertisement />
           <Header />
-          <main className="wholePageItemsContainer relative top-18">
-            <div className="flex items-center justify-between px-4 py-5 text-sm text-(--text-color)">
+          <main className="wholePageItemsContainer relative top-18 px-4 max-xl:top-4">
+            <div className="flex items-center justify-between py-5 text-sm text-[var(--text-color)]">
               <div className="flex items-center">
                 {data.breadcrumb.slice(0, -1).map((url, i) => (
                   <div key={i}>
@@ -51,7 +53,7 @@ function TheProductPage() {
                 ))}
               </div>
               <a
-                className="flex items-center gap-1 text-[12px]"
+                className="flex items-center gap-1 text-[12px] max-md:hidden"
                 href="https://www.digikala.com/landings/seller-introduction/"
                 target="_blank"
               >
@@ -59,15 +61,19 @@ function TheProductPage() {
                 <Shop />
               </a>
             </div>
-            <div className="flex justify-between px-4">
+            <div className="flex justify-between max-lg:flex-col">
               <ProductImageBox />
               <ProdcutInformationBox />
+            </div>
+            <div className="mt-5 flex flex-col">
+              <ProductCommentBox />
             </div>
           </main>
         </>
       ) : (
         <span>{error}</span>
       )}
+      <TheProductPageModal />
     </>
   );
 }

@@ -5,7 +5,7 @@ function SearchResult() {
   const { data, error, isLoading } = useSelector((store) => store.search);
 
   return (
-    <div className="flex min-h-10 w-full items-center justify-center py-4 text-[15px] text-(--text-color)">
+    <div className="flex min-h-10 w-full items-center justify-center py-4 text-[15px] text-[var(--text-color)]">
       <>
         {error === "" && isLoading === false && !data && (
           <span>کالای مورد نیاز خودرا جستجو کنید</span>
@@ -36,7 +36,7 @@ function SearchResult() {
                     {Category.keyword}
                     <div>
                       در دسته‌ی{" "}
-                      <span className="text-[#19bfd3]">
+                      <span className="text-[var(--color-blue1)]">
                         {Category.category.title_fa}
                       </span>
                     </div>

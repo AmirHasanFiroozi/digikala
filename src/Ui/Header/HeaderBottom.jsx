@@ -18,7 +18,7 @@ function HeaderBottom() {
         <NavLinks />
         <Line />
         <QuestionsAndSellInDigikala />
-        <div className="absolute bottom-0 h-0.5 w-0 rounded-md bg-(--color-mainred) transition-[0.3s]"></div>
+        <div className="absolute bottom-0 h-0.5 w-0 rounded-md bg-[var(--color-mainred)] transition-[0.3s]"></div>
       </div>
       <div className="py-2 max-xl:w-full">
         <ChooseCityButton />

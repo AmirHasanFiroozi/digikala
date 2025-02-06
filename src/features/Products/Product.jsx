@@ -22,7 +22,7 @@ function Product({ product, number, gridNumber }) {
   return (
     <div
       onClick={productClickHandler}
-      className="customTransition relative flex h-[400px] w-full cursor-pointer flex-col gap-2 border-(--color-gray2) p-4 pt-10 hover:shadow-2xl max-sm:flex-row max-sm:h-[200px]"
+      className="customTransition relative flex h-[400px] w-full cursor-pointer flex-col gap-2 border-[var(--color-gray2)] p-4 pt-10 hover:shadow-2xl max-sm:flex-row max-sm:h-[200px]"
       style={{
         borderLeftWidth: `${gridNumber !== 0 && number % gridNumber === 0 ? "0px" : "1px"}`,
         borderBottomWidth: "1px",
@@ -34,7 +34,7 @@ function Product({ product, number, gridNumber }) {
           <img className="w-18" src={specialSell} alt="special sell" />
         )}
       </div>
-      <div className="flex h-[60%] max-sm:h-full w-full items-center justify-center rounded-xl">
+      <div className="flex h-[200px] max-sm:h-full max-w-[300px] w-full max-lg:max-w-full items-center justify-center rounded-xl">
         <img
           className="h-full w-full object-contain"
           src={product.images.main.webp_url}
@@ -42,7 +42,7 @@ function Product({ product, number, gridNumber }) {
         />
       </div>
       <div>
-        <h2 className="my-2 line-clamp-2 h-12 leading-6 font-bold text-(--text-color)">
+        <h2 className="my-2 line-clamp-2 h-12 leading-6 font-bold text-[var(--text-color)]">
           {product.title_fa}
         </h2>
         <div className="flex w-full items-center justify-between">
@@ -57,14 +57,14 @@ function Product({ product, number, gridNumber }) {
         <div className="flex items-center justify-between">
           <span>
             {discount !== 0 && (
-              <span className="rounded-full bg-(--color-red1) px-2 py-0 text-white">
+              <span className="rounded-full bg-[var(--color-red1)] px-2 py-0 text-white">
                 {toPersianNumber(discount)}%
               </span>
             )}
           </span>
           {price === undefined ? (
             <>
-              <span className="text-xl font-bold text-(--text-color)">
+              <span className="text-xl font-bold text-[var(--text-color)]">
                 ناموجود
               </span>
             </>
@@ -76,7 +76,7 @@ function Product({ product, number, gridNumber }) {
               </div>
               <div>
                 {discount !== 0 && (
-                  <span className="text-(--color-gray3) line-through">
+                  <span className="text-[var(--color-gray3)] line-through">
                     {formatPrice(price / 10)}
                   </span>
                 )}

@@ -49,23 +49,23 @@ function PopularProducts() {
           style={style}
           className="text-(text-color) relative z-0 inline-flex items-center gap-1 text-sm font-bold transition"
         >
-          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-(--color-gray3) px-4 py-2 text-nowrap">
+          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-[var(--color-gray3)] px-4 py-2 text-nowrap">
             بوکت
             <ArrowLeft />
           </li>
-          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-(--color-gray3) px-4 py-2 text-nowrap">
+          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-[var(--color-gray3)] px-4 py-2 text-nowrap">
             هفت سین سنگ مصنویی
             <ArrowLeft />
           </li>
-          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-(--color-gray3) px-4 py-2 text-nowrap">
+          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-[var(--color-gray3)] px-4 py-2 text-nowrap">
             ماسک بینی نابینا
             <ArrowLeft />
           </li>
-          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-(--color-gray3) px-4 py-2 text-nowrap">
+          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-[var(--color-gray3)] px-4 py-2 text-nowrap">
             تنگ ماهی شیشه‌ای
             <ArrowLeft />
           </li>
-          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-(--color-gray3) px-4 py-2 text-nowrap">
+          <li className="flex cursor-pointer items-center gap-1 rounded-3xl border-1 border-[var(--color-gray3)] px-4 py-2 text-nowrap">
             تنگ ماهی شیشه‌ای
             <ArrowLeft />
           </li>

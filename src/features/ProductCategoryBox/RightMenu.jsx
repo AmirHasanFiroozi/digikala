@@ -9,9 +9,6 @@ import {
   Car,
   Furniture,
   Tools,
-  Clothes,
-  Ornaments,
-  Medicine,
   Stationery,
   ExerciseAndHealth,
   Gift,
@@ -20,6 +17,7 @@ import {
   Native,
 } from "../../Ui/SVGs/Svg";
 
+/* eslint-disable react/prop-types */
 function RightMenu({ device }) {
   const category = useSelector((store) => store.category.category);
   const dispatch = useDispatch();
@@ -42,7 +40,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "phone" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "phone" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="phone"
         >
           <Phone />
@@ -53,7 +51,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "digital" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "digital" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="digital"
         >
           <Laptop />
@@ -64,7 +62,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "home" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "home" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="home"
         >
           <Sofa />
@@ -75,7 +73,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "cosmeticsAnsHealth" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "cosmeticsAnsHealth" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="cosmeticsAnsHealth"
         >
           <Makeup />
@@ -86,7 +84,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "carAndMotorBice" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "carAndMotorBice" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="carAndMotorBice"
         >
           <Car />
@@ -97,7 +95,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "electric" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "electric" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="electric"
         >
           <Furniture />
@@ -108,7 +106,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "tools" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "tools" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="tools"
         >
           <Tools />
@@ -119,7 +117,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "booksAndStationery" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "booksAndStationery" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="booksAndStationery"
         >
           <Stationery />
@@ -130,7 +128,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "travelAndExercise" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "travelAndExercise" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="travelAndExercise"
         >
           <ExerciseAndHealth />
@@ -141,7 +139,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "giftCart" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "giftCart" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="giftCart"
         >
           <Gift />
@@ -152,7 +150,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "edible" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "edible" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="edible"
         >
           <Food />
@@ -163,7 +161,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "kids" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "kids" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="kids"
         >
           <Baby />
@@ -174,7 +172,7 @@ function RightMenu({ device }) {
           onMouseEnter={
             device === "mobile" ? undefined : MouseEnterEventHandler
           }
-          className={`flex gap-2 p-3 ${category === "native" ? "bg-white text-(--color-red)" : ""} transition max-xl:text-wrap max-xl:flex-col max-xl:items-center`}
+          className={`flex gap-2 p-3 ${category === "native" ? "bg-white text-(--color-red)" : ""} transition max-xl:flex-col max-xl:items-center max-xl:text-wrap`}
           data-category="native"
         >
           <Native />

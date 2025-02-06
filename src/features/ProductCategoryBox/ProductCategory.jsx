@@ -24,14 +24,13 @@ function BoxCategory() {
         className="relative text-sm"
       >
         <div
-          className={`flex cursor-pointer items-center gap-0.5 py-3 hover:text-(--color-red) ${megaMenu ? "text-(--color-red)": "" }`}
+          className={`flex cursor-pointer items-center gap-0.5 py-3 hover:text-[var(--color-red)] ${megaMenu ? "text-[var(--color-red)]": "" }`}
         >
           <HanmberMenu />
           دسته‌بندی کالاها
         </div>
         <MenuBox />
       </div>
-      {/* {hoverSituation && <Cover />} */}
     </>
   );
 }

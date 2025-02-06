@@ -19,6 +19,7 @@ function ProductImageBox() {
   useEffect(
     function () {
       setImageBoxWidth(imageBoxWidthRef.current.offsetWidth);
+      setLeft(0);
     },
     [width],
   );
@@ -47,6 +48,8 @@ function ProductImageBox() {
     setLeft((+ev.target.getAttribute("data-slid") - 1) * imageBoxWidth);
   }
 
+  console.log(imageBoxWidth);
+
   return (
     <div
       ref={imageBoxWidthRef}
@@ -64,11 +67,11 @@ function ProductImageBox() {
       //   onMouseDown={() => setShowZom(true)}
       //   onMouseUp={()=> setShowZom(false)}
       //   onMouseMove={MouseMoveHandler}
-      className="relative h-[500px] w-[28%] flex flex-col gap-1 focus:outline-0"
+      className="relative h-[500px] w-[28%] flex flex-col gap-1 focus:outline-0 max-lg:w-[100%]"
     >
       <div className="flex h-[75%] w-full overflow-hidden">
         <div
-          className="flex"
+          className="flex w-full h-full justify-center items-center"
           style={{
             width: `${AllPictures.length * imageBoxWidth}px`,
             transform: `translate3d(${left}px,0,0)`,
@@ -77,7 +80,7 @@ function ProductImageBox() {
         >
           {AllPictures.map((image, i) => (
             <div
-              className="h-full w-full"
+              className="h-full"
               style={{ width: `${imageBoxWidth}px` }}
               key={i}
             >
@@ -102,7 +105,7 @@ function ProductImageBox() {
               onClick={goToSlideFunction}
               key={i}
               data-slid={i + 1}
-              className={`customTransition h-20 w-20 cursor-pointer rounded-2xl border-[1px] p-3 mt-4 ${i + 1 === slideNumber ? "border-(--color-red1)" : "border-(--color-gray2)"}`}
+              className={`customTransition h-20 w-20 cursor-pointer rounded-2xl border-[1px] p-3 mt-4 ${i + 1 === slideNumber ? "border-{var(--color-red1)}" : "border-[var(--color-gray2)]"}`}
             >
               <img src={image.webp_url} alt="product image" />
             </div>
@@ -114,13 +117,13 @@ function ProductImageBox() {
       >
         <button
           onClick={prevPictureHandler}
-          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tl-lg rounded-bl-lg shadow text-(--text-color)`}
+          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tl-lg rounded-bl-lg shadow text-[var(--text-color)]`}
         >
           <ArrowRight />
         </button>
         <button
           onClick={nextPictureHandler}
-          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tr-lg rounded-br-lg shadow text-(--text-color)`}
+          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tr-lg rounded-br-lg shadow text-[var(--text-color)]`}
         >
           <ArrowLeft />
         </button>
