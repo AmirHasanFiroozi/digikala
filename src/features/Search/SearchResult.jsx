@@ -1,11 +1,8 @@
 import { useSelector } from "react-redux";
-import { Error } from "../../Ui/SVGs/Svg";
-import SearchResultItems from "./SearchResultItems";
+import { Error, Search } from "../../Ui/SVGs/Svg";
 
 function SearchResult() {
   const { data, error, isLoading } = useSelector((store) => store.search);
- 
-  console.log(data);
 
   return (
     <div className="flex min-h-10 w-full items-center justify-center py-4 text-[15px] text-[var(--text-color)]">
@@ -25,9 +22,28 @@ function SearchResult() {
         )}
         {error === "" && isLoading === false && data && (
           <ul className="flex h-full w-full flex-col gap-5">
-            {data.categories.map((Category) => 
-                <SearchResultItems key={Category.category.id} Category={Category} />
-            )}
+            {data.categories.map((Category) => (
+              <li key={Category.category.id}>
+                <a
+                  className="flex gap-1"
+                  href={`https://www.digikala.com/search/drillbit/?q=${Category.keyword}`}
+                  target="_blank"
+                >
+                  <div className="mt-1">
+                    <Search />
+                  </div>
+                  <div>
+                    {Category.keyword}
+                    <div>
+                      در دسته‌ی{" "}
+                      <span className="text-[var(--color-blue1)]">
+                        {Category.category.title_fa}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            ))}
           </ul>
         )}
       </>
