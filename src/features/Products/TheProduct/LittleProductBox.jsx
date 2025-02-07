@@ -4,9 +4,9 @@ import ProductPrice from "./ProductPrice";
 function LittleProductBox() {
   const { data , color } = useSelector((store) => store.theProductReducer);
   return (
-    <div className="sticky top-52 h-[340px] w-full max-w-[350px] rounded-2xl border-2 border-[var(--color-gray3)] bg-[var(--color-gray1)] p-4 max-md:hidden">
+    <div className="sticky top-52 h-[340px] w-full max-w-[350px] rounded-2xl border-2 border-[var(--color-gray3)] bg-[var(--color-gray1)] p-4 max-md:hidden max-xl:top-30">
       <div className="flex gap-2 border-b-2 border-[var(--color-gray3)] py-5">
-        <div className="w-[50%] overflow-hidden rounded-xl">
+        <div className="w-[50%] max-h-[90px] overflow-hidden rounded-xl">
           <img
             className="h-full w-full object-contain"
             src={data.images.main.webp_url}
@@ -19,9 +19,9 @@ function LittleProductBox() {
           </h4>
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full"
-             style={{backgroundColor : `${color.hex_code}`}}
+             style={{backgroundColor : `${color?.hex_code}`}}
             ></div>
-            <span>{color.title}</span>
+            <span>{color?.title}</span>
           </div>
         </div>
       </div>

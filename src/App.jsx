@@ -4,11 +4,11 @@ import { lazy } from "react";
 import HomePage from "./pages/HomePage";
 import HandleFullLoader from "./Ui/Loader/HandleFullLoader";
 import TheProductPage from "./pages/TheProductPage";
-const CategoryPage = lazy(() =>import("./pages/CategoryPage"));
-const CartPage = lazy(() =>import("./pages/CartPage"));
-const UserPage = lazy(() =>import("./pages/UserPage"));
-const HandleModals = lazy(() =>import("./features/modals/HandleModals"));
-const ProductPage = lazy(() =>import("./pages/ProductPage"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage"));
+const CartPage = lazy(() => import("./pages/CartPage"));
+const UserPage = lazy(() => import("./pages/UserPage"));
+const HandleModals = lazy(() => import("./features/modals/HandleModals"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
 
 const router = createBrowserRouter([
   {
@@ -41,8 +41,8 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <HandleModals />
-      <HandleFullLoader />
+        <HandleModals />
+        <HandleFullLoader />
     </>
   );
 }

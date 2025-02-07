@@ -1,20 +1,23 @@
 import { memo } from "react";
 import formatPrice from "../../services/formatPrice";
 import toPersianNumber from "../../services/toPersianNumber";
+import { useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 function AmazingOffersElement({ product }) {
+  const navigate = useNavigate();
   const price = product.default_variant.price?.rrp_price;
   const discountPrice = product.default_variant.price?.selling_price;
   const discount = (((price - discountPrice) * 100) / price).toFixed(0);
 
-  console.log(price);
+  function clickProductHandler() {
+    navigate(`/products/${product.id}`);
+  }
 
   return (
-    <a
-      href={`https://www.digikala.com/${product.url.uri}`}
-      target="_blank"
-      className="h-full w-40 bg-white p-2 text-[var(--text-color)]"
+    <div
+      onClick={clickProductHandler}
+      className="cursor-pointer h-full w-40 bg-white p-2 text-[var(--text-color)]"
     >
       <div className="h-[55%] w-full">
         <img
@@ -54,7 +57,7 @@ function AmazingOffersElement({ product }) {
           </>
         )}
       </div>
-    </a>
+    </div>
   );
 }
 

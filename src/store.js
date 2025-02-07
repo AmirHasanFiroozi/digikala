@@ -5,6 +5,7 @@ import homePageWidgetsReducer from "./features/HomePageFeaturesRequest";
 import productReducer from "./features/ProductRequest";
 import theProductReducer from "./features/Products/TheProduct/productSlice";
 import commentReducer from "./features/Products/TheProduct/commentSlice";
+import cartReducer from "./features/Cart/addToCartSlice"
  
 
 const store = configureStore({
@@ -15,6 +16,7 @@ const store = configureStore({
        productReducer ,
        theProductReducer ,
        commentReducer ,
+       cartReducer ,
     }
 })
 

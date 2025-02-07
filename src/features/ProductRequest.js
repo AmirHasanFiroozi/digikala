@@ -60,6 +60,7 @@ export default productSlice.reducer;
 
 export function requestProducts(
   page,
+  searchQuery = "%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84&page",
   jetDelivery = "",
   shipBySeller = "",
   sellingStock = "",
@@ -69,7 +70,7 @@ export function requestProducts(
     try {
       dispatch(productSlice.actions.setLoading());
       const req = await fetch(
-        `https://api.digikala.com/v1/search/?${sellingStock === "sellingStock" ? "has_selling_stock=1" : ""}${jetDelivery === "jetDelivery" ? "has_jet_delivery=1" : ""}${shipBySeller === "shipBySeller" ? "has_ship_by_seller=1" : ""}q=%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84&page=${page}`,
+        `https://api.digikala.com/v1/search/?${sellingStock === "sellingStock" ? "has_selling_stock=1" : ""}${jetDelivery === "jetDelivery" ? "has_jet_delivery=1" : ""}${shipBySeller === "shipBySeller" ? "has_ship_by_seller=1" : ""}q=${searchQuery}=${page}`,
       );
       const data = await req.json();
       dispatch(

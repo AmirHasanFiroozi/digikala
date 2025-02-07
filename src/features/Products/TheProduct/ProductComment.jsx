@@ -51,12 +51,12 @@ function ProductComment({ comment }) {
         }}
       >
         <p ref={paragraph} className={`text-justify text-[14px]`}>
-          <div
+          <span
             className={`absolute top-0 left-0 z-20 h-full w-full ${Continue ? "invisible opacity-0" : "visible opacity-100"}`}
             style={{
               background: `${textHeight > 80 ? "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.90) 100%)" : ""}`,
             }}
-          ></div>
+          ></span>
           {comment.body}
         </p>
       </div>

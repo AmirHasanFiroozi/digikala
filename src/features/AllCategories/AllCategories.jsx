@@ -5,7 +5,6 @@ function AllCategories() {
   const categories = data.filter(
     (data) => data.type === "main_categories_grid",
   )[0].data;
-  console.log(categories);
 
   return (
     <div className="mainContainer flex flex-col items-center text-center text-xl">

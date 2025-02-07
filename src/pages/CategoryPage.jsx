@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Search from "../features/Search/Search";
 import MobileHeader from "../Ui/Header/MobileHeader";
 import useSize from "../Hooks/useSize";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import MenuBox from "../features/ProductCategoryBox/MenuBox";
 
 function CategoryPage() {

@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
 import ArrowRightButton from "../../Ui/Buttons/ArrowRightButton";
 import ArrowLeftButton from "../../Ui/Buttons/ArrowLeftButton";
 import useSize from "../../Hooks/useSize";
@@ -8,6 +7,7 @@ import { Image } from "../../Ui/SVGs/Svg";
 function Slider({ slides }) {
   const [buttonShows, setButtonShows] = useState(false);
   const [slideWidth, setSlideWidth] = useState(0);
+  const [touchStartX , setTouchStartX] = useState(0);
   const [right, setRight] = useState(0);
   const [width] = useSize();
   const slide = useRef();
@@ -49,6 +49,24 @@ function Slider({ slides }) {
     setRight(-(+ev.target.getAttribute("data-id") * slideWidth));
   }
 
+  function handleTouchStart(ev){
+    setTouchStartX(ev.touches[0].clientX);
+  }
+
+  function handleTouchEnd(ev){
+    const touchEndX = ev.changedTouches[0].clientX ;
+    const different = touchEndX - touchStartX ;
+
+    if(different > 50){
+      nextSlide();
+    }
+
+    if(different < 50){
+      prevSlide()
+    }
+  }
+
+
   return (
     <div
       onKeyDown={(ev) => {
@@ -59,6 +77,8 @@ function Slider({ slides }) {
           prevSlide();
         }
       }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       onMouseEnter={() => setButtonShows(true)}
       onMouseLeave={() => setButtonShows(false)}
       className="wholePageItemsContainer relative flex h-[400px] items-center justify-center gap-1 overflow-hidden max-xl:h-[200px] max-sm:h-[150px]"

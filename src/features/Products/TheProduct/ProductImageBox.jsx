@@ -7,6 +7,7 @@ function ProductImageBox() {
   const { data } = useSelector((store) => store.theProductReducer);
   const AllPictures = [data.images.main, ...data.images.list];
   const [imageBoxWidth, setImageBoxWidth] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
   const [left, setLeft] = useState(0);
   const [buttonShows, setButtonShows] = useState(false);
   //   const [zoomBox, setZoomBox] = useState({ x: 0, y: 0 });
@@ -48,7 +49,22 @@ function ProductImageBox() {
     setLeft((+ev.target.getAttribute("data-slid") - 1) * imageBoxWidth);
   }
 
-  console.log(imageBoxWidth);
+  function handleTouchStart(ev){
+    setTouchStartX(ev.touches[0].clientX);
+  }
+
+  function handleTouchEnd(ev){
+    const touchEndX = ev.changedTouches[0].clientX ;
+    const different = touchEndX - touchStartX ;
+
+    if(different > 50){
+      nextPictureHandler();
+    }
+
+    if(different < 50){
+      prevPictureHandler()
+    }
+  }
 
   return (
     <div
@@ -62,20 +78,22 @@ function ProductImageBox() {
           prevPictureHandler();
         }
       }}
+      onTouchEnd={handleTouchEnd}
+      onTouchStart={handleTouchStart}
       onMouseEnter={() => setButtonShows(true)}
       onMouseLeave={() => setButtonShows(false)}
       //   onMouseDown={() => setShowZom(true)}
       //   onMouseUp={()=> setShowZom(false)}
       //   onMouseMove={MouseMoveHandler}
-      className="relative h-[500px] w-[28%] flex flex-col gap-1 focus:outline-0 max-lg:w-[100%]"
+      className="relative flex h-[500px] w-[28%] flex-col gap-1 focus:outline-0 max-lg:w-[100%]"
     >
       <div className="flex h-[75%] w-full overflow-hidden">
         <div
-          className="flex w-full h-full justify-center items-center"
+          className="flex h-full w-full items-center justify-center"
           style={{
             width: `${AllPictures.length * imageBoxWidth}px`,
             transform: `translate3d(${left}px,0,0)`,
-            transitionDuration : "0.3s"
+            transitionDuration: "0.3s",
           }}
         >
           {AllPictures.map((image, i) => (
@@ -96,16 +114,17 @@ function ProductImageBox() {
       <div className="hideScrollbar h-[25%] overflow-y-auto">
         <div
           className="flex gap-1"
-          style={{ width: `${AllPictures.length * 80}px`,
-            transform : `translate3d(${slideNumber>=NumberOfElementInImageBox ? (slideNumber-NumberOfElementInImageBox) * 80 : "0"}px,0,0)`
-        }}
+          style={{
+            width: `${AllPictures.length * 80}px`,
+            transform: `translate3d(${slideNumber >= NumberOfElementInImageBox ? (slideNumber - NumberOfElementInImageBox) * 80 : "0"}px,0,0)`,
+          }}
         >
           {AllPictures.map((image, i) => (
             <div
               onClick={goToSlideFunction}
               key={i}
               data-slid={i + 1}
-              className={`customTransition h-20 w-20 cursor-pointer rounded-2xl border-[1px] p-3 mt-4 ${i + 1 === slideNumber ? "border-{var(--color-red1)}" : "border-[var(--color-gray2)]"}`}
+              className={`customTransition mt-4 h-20 w-20 cursor-pointer rounded-2xl border-[1px] p-3 ${i + 1 === slideNumber ? "border-{var(--color-red1)}" : "border-[var(--color-gray2)]"}`}
             >
               <img src={image.webp_url} alt="product image" />
             </div>
@@ -113,17 +132,17 @@ function ProductImageBox() {
         </div>
       </div>
       <div
-        className={`absolute h-[75%] right-0 left-0 flex items-center justify-between ${buttonShows ? "visible opacity-100" : "invisible opacity-0"}`}
+        className={`absolute right-0 left-0 flex h-[75%] items-center justify-between ${buttonShows ? "visible opacity-100" : "invisible opacity-0"}`}
       >
         <button
           onClick={prevPictureHandler}
-          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tl-lg rounded-bl-lg shadow text-[var(--text-color)]`}
+          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tl-lg rounded-bl-lg text-[var(--text-color)] shadow`}
         >
           <ArrowRight />
         </button>
         <button
           onClick={nextPictureHandler}
-          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tr-lg rounded-br-lg shadow text-[var(--text-color)]`}
+          className={`customTransition top-0 bottom-0 flex h-full w-10 cursor-pointer items-center justify-center rounded-tr-lg rounded-br-lg text-[var(--text-color)] shadow`}
         >
           <ArrowLeft />
         </button>
