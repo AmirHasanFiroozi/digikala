@@ -5,7 +5,7 @@ import Cover from "../Ui/Other/Cover";
 import InstallDigikala from "../features/Advertisement/InstallDigikala";
 import MobileHeader from "../Ui/Header/MobileHeader";
 import { useSelector } from "react-redux";
-import HomePageSlider from "../features/slider/HomePageSlider"
+import HomePageSlider from "../features/Slider/HomePageSlider"
 import AmazingOfferBox from "../features/AmazingOffers/AmazingOfferBox";
 import AllCategories from "../features/AllCategories/AllCategories";
 
